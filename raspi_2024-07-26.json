@@ -1,0 +1,4009 @@
+[
+    {
+        "id": "1ebd56605af544de",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "29ef18f01715030b",
+        "type": "tab",
+        "label": "nano",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "9d40c9a1934f0d98",
+        "type": "tab",
+        "label": "FIRE",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "69466c75b8cab1be",
+        "type": "tab",
+        "label": "Dashboard",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "deb3f3817ecef077",
+        "type": "junction",
+        "z": "9d40c9a1934f0d98",
+        "x": 280,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "e261331466778273",
+        "type": "serial-port",
+        "name": "USB0",
+        "serialport": "/dev/ttyUSB0",
+        "serialbaud": "115200",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": "10000"
+    },
+    {
+        "id": "64bde2e3b9293324",
+        "type": "ui_tab",
+        "name": "PRESS MACHINE HMI",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "9a17b493cd9f48c7",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey",
+                "palette": "light"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "f2fe64a9681638bb",
+        "type": "ui_group",
+        "name": "Default",
+        "tab": "64bde2e3b9293324",
+        "order": 1,
+        "disp": false,
+        "width": "12",
+        "collapse": false,
+        "className": ""
+    },
+    {
+        "id": "e39ff0824cf944ba",
+        "type": "serial-port",
+        "name": "USB1",
+        "serialport": "/dev/ttyUSB1",
+        "serialbaud": "115200",
+        "databits": "8",
+        "parity": "none",
+        "stopbits": "1",
+        "waitfor": "",
+        "dtr": "none",
+        "rts": "none",
+        "cts": "none",
+        "dsr": "none",
+        "newline": "\\n",
+        "bin": "false",
+        "out": "char",
+        "addchar": "",
+        "responsetimeout": "10000"
+    },
+    {
+        "id": "10548dd5fcf0d63d",
+        "type": "rpi-gpio in",
+        "z": "1ebd56605af544de",
+        "name": "button",
+        "pin": "4",
+        "intype": "up",
+        "debounce": "25",
+        "read": true,
+        "bcm": true,
+        "x": 670,
+        "y": 20,
+        "wires": [
+            [
+                "620857cd89cda67f"
+            ]
+        ]
+    },
+    {
+        "id": "e37fb5a80ca7410f",
+        "type": "rpi-gpio in",
+        "z": "1ebd56605af544de",
+        "name": "EMG",
+        "pin": "17",
+        "intype": "up",
+        "debounce": "25",
+        "read": true,
+        "bcm": true,
+        "x": 70,
+        "y": 100,
+        "wires": [
+            [
+                "e708678c76fc9b00"
+            ]
+        ]
+    },
+    {
+        "id": "16f4b1c3822f6f8b",
+        "type": "rpi-gpio in",
+        "z": "1ebd56605af544de",
+        "name": "IR",
+        "pin": "27",
+        "intype": "tri",
+        "debounce": "25",
+        "read": true,
+        "bcm": true,
+        "x": 650,
+        "y": 80,
+        "wires": [
+            [
+                "4fd527fbcc96be7d"
+            ]
+        ]
+    },
+    {
+        "id": "1dceeda8fda31e12",
+        "type": "rpi-gpio in",
+        "z": "1ebd56605af544de",
+        "name": "LS",
+        "pin": "22",
+        "intype": "up",
+        "debounce": "25",
+        "read": true,
+        "bcm": true,
+        "x": 70,
+        "y": 220,
+        "wires": [
+            [
+                "cb5695c33232e247"
+            ]
+        ]
+    },
+    {
+        "id": "620857cd89cda67f",
+        "type": "change",
+        "z": "1ebd56605af544de",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "button",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 840,
+        "y": 20,
+        "wires": [
+            [
+                "e3dbec05f87e21c1"
+            ]
+        ]
+    },
+    {
+        "id": "e708678c76fc9b00",
+        "type": "change",
+        "z": "1ebd56605af544de",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "emergency",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 220,
+        "y": 100,
+        "wires": [
+            [
+                "49901a8d4f2bdc9f"
+            ]
+        ]
+    },
+    {
+        "id": "4fd527fbcc96be7d",
+        "type": "change",
+        "z": "1ebd56605af544de",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "infraredSensor",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            },
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 840,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "cb5695c33232e247",
+        "type": "change",
+        "z": "1ebd56605af544de",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "limitSwitch",
+                "pt": "global",
+                "to": "payload",
+                "tot": "msg"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 240,
+        "y": 220,
+        "wires": [
+            [
+                "763ba17a4369938f"
+            ]
+        ]
+    },
+    {
+        "id": "cf69320ed8689418",
+        "type": "rpi-gpio out",
+        "z": "1ebd56605af544de",
+        "name": "cylinder",
+        "pin": "23",
+        "set": true,
+        "level": "0",
+        "freq": "",
+        "out": "out",
+        "bcm": true,
+        "x": 500,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "e3dbec05f87e21c1",
+        "type": "function",
+        "z": "1ebd56605af544de",
+        "name": "buttonman_function",
+        "func": "if(typeof global.get(\"breakdown\") === \"undefined\" || typeof global.get(\"limitSwitch\") === \"undefined\"){\n\n} else {\n    const emg = global.get(\"breakdown\");\n    const ls = global.get(\"limitSwitch\");\n    const ir = global.get(\"infraredSensor\");\n    const lock = global.get(\"lock\");\n\n    if(!emg){\n        if(ls && !ir && !msg.payload && lock){\n            global.set(\"cylinder\", 1);\n            \n            if(global.get(\"setupState\")){\n                if(typeof global.get(\"hist\") === \"undefined\"){\n                    global.set(\"hist\", [[\"cycle\",Date.now()]]);\n                } else {\n                    let hist = global.get(\"hist\");\n                    hist.push([\"cycle\",Date.now()]);\n                    global.set(\"hist\",hist);\n                }\n            }\n\n            return {payload:1};\n        }\n    }\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1030,
+        "y": 20,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c33fbfa7f49f0797",
+        "type": "context-monitor",
+        "z": "1ebd56605af544de",
+        "name": "",
+        "monitoring": [
+            {
+                "scope": "global",
+                "key": "cylinder"
+            }
+        ],
+        "tostatus": true,
+        "x": 70,
+        "y": 580,
+        "wires": [
+            [
+                "50668a642538d9d6"
+            ],
+            [
+                "50668a642538d9d6"
+            ]
+        ]
+    },
+    {
+        "id": "49901a8d4f2bdc9f",
+        "type": "function",
+        "z": "1ebd56605af544de",
+        "name": "emgman_function",
+        "func": "if(msg.payload){\n    global.set(\"cylinder\", 0);\n    global.set(\"breakdown\", true);\n\n    if(typeof global.get(\"hist\") === \"undefined\"){\n        global.set(\"hist\", [[\"breakdown\",Date.now()]])\n    } else {\n        let hist = global.get(\"hist\");\n        hist.push([\"breakdown\",Date.now()]);\n        global.set(\"hist\",hist);\n    }\n} else {\n    global.set(\"breakdown\", false);\n\n    if(typeof global.get(\"hist\") === \"undefined\"){\n        global.set(\"hist\", [[\"stoppage\",Date.now()]])\n    } else {\n        let last = \"stoppage\";\n        if(!global.get(\"setupState\")){\n            last = \"setup\"\n        }\n\n        let hist = global.get(\"hist\");\n        hist.push([last,Date.now()]);\n        global.set(\"hist\",hist);\n    }\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 410,
+        "y": 100,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9d308059df11de4b",
+        "type": "trigger",
+        "z": "1ebd56605af544de",
+        "name": "",
+        "op1": "",
+        "op2": "",
+        "op1type": "nul",
+        "op2type": "payl",
+        "duration": "2000",
+        "extend": true,
+        "overrideDelay": false,
+        "units": "ms",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 700,
+        "y": 180,
+        "wires": [
+            [
+                "29110bc8ccc23a7b"
+            ]
+        ]
+    },
+    {
+        "id": "111296ab259e0625",
+        "type": "debug",
+        "z": "1ebd56605af544de",
+        "name": "cylinder",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 500,
+        "y": 640,
+        "wires": []
+    },
+    {
+        "id": "29110bc8ccc23a7b",
+        "type": "function",
+        "z": "1ebd56605af544de",
+        "name": "lastman_function",
+        "func": "global.set(\"cylinder\", 0)",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 890,
+        "y": 180,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "763ba17a4369938f",
+        "type": "function",
+        "z": "1ebd56605af544de",
+        "name": "lsman_function",
+        "func": "if(msg.payload){\n    const emg = global.get(\"breakdown\");\n    const pb = global.get(\"button\")\n    const ir = global.get(\"infraredSensor\");\n\n    if(!emg){\n        if(!pb && !ir){\n            global.set(\"cylinder\", 1);\n            if(global.get(\"setupState\")) {\n                if (typeof context.get(\"lastState\") === \"undefined\") {\n                    context.set(\"lastState\", msg.payload);\n                } else {\n                    context.set(\"lastState\", msg.payload);\n                    return [\n                        { payload: 0 },\n                        { payload: 1 }\n                    ]\n                }\n            }\n        } else {\n            if (global.get(\"setupState\")) {\n                if (typeof global.get(\"hist\") === \"undefined\") {\n                    global.set(\"hist\", [[\"stoppage\", Date.now()]]);\n                } else {\n                    let hist = global.get(\"hist\");\n                    hist.push([\"stoppage\", Date.now()]);\n                    global.set(\"hist\", hist);\n                }\n\n                if (typeof context.get(\"lastState\") === \"undefined\") {\n                    context.set(\"lastState\", msg.payload);\n                } else {\n                    context.set(\"lastState\", msg.payload);\n                    return [\n                        ,\n                        { payload: 1 }\n                    ]\n                }\n            }\n        }\n    } else {\n        \n    }\n} else {\n    context.set(\"lastState\",msg.payload)\n    return [\n        {payload: 0},\n        \n    ]\n}",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 440,
+        "y": 220,
+        "wires": [
+            [
+                "9d308059df11de4b"
+            ],
+            [
+                "9f8b5a62cb8ebb6c",
+                "6037bb4639853623"
+            ]
+        ]
+    },
+    {
+        "id": "10c0b5eb3906edca",
+        "type": "inject",
+        "z": "1ebd56605af544de",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 290,
+        "y": 620,
+        "wires": [
+            [
+                "cf69320ed8689418"
+            ]
+        ]
+    },
+    {
+        "id": "2420fec26155fae2",
+        "type": "inject",
+        "z": "1ebd56605af544de",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "false",
+        "payloadType": "bool",
+        "x": 290,
+        "y": 660,
+        "wires": [
+            [
+                "cf69320ed8689418"
+            ]
+        ]
+    },
+    {
+        "id": "50668a642538d9d6",
+        "type": "function",
+        "z": "1ebd56605af544de",
+        "name": "cylinderman_function",
+        "func": "if(global.get(\"lock\")){\n    return msg;\n} else {\n    return {payload: 0};\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 240,
+        "y": 580,
+        "wires": [
+            [
+                "cf69320ed8689418",
+                "111296ab259e0625"
+            ]
+        ]
+    },
+    {
+        "id": "755d24d1a4cdb368",
+        "type": "rpi-gpio out",
+        "z": "1ebd56605af544de",
+        "name": "valve",
+        "pin": "24",
+        "set": true,
+        "level": "1",
+        "freq": "",
+        "out": "out",
+        "bcm": true,
+        "x": 490,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "ab74cc9dd0fd0694",
+        "type": "inject",
+        "z": "1ebd56605af544de",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 290,
+        "y": 740,
+        "wires": [
+            [
+                "755d24d1a4cdb368"
+            ]
+        ]
+    },
+    {
+        "id": "5736f89e7c7cc20d",
+        "type": "inject",
+        "z": "1ebd56605af544de",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "false",
+        "payloadType": "bool",
+        "x": 290,
+        "y": 780,
+        "wires": [
+            [
+                "755d24d1a4cdb368"
+            ]
+        ]
+    },
+    {
+        "id": "c7a940821be9facc",
+        "type": "link in",
+        "z": "1ebd56605af544de",
+        "name": "valve",
+        "links": [
+            "e0105d0d26bd9f16"
+        ],
+        "x": 125,
+        "y": 700,
+        "wires": [
+            [
+                "a6c0d4af5a422a75"
+            ]
+        ]
+    },
+    {
+        "id": "a6c0d4af5a422a75",
+        "type": "function",
+        "z": "1ebd56605af544de",
+        "name": "valveman_function",
+        "func": "if(msg.payload.pressure <= 5){\n    return {payload: 0};\n} else if(msg.payload.pressure >= 6.5){\n    return {payload: 1};\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 250,
+        "y": 700,
+        "wires": [
+            [
+                "755d24d1a4cdb368"
+            ]
+        ]
+    },
+    {
+        "id": "f4389fec4da4c8d8",
+        "type": "http request",
+        "z": "1ebd56605af544de",
+        "name": "PUT /processed",
+        "method": "PUT",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://semoga-lulus.vercel.app/api/processed",
+        "tls": "",
+        "persist": true,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "Authorization",
+                "keyValue": "",
+                "valueType": "msg",
+                "valueValue": "auth"
+            }
+        ],
+        "x": 960,
+        "y": 240,
+        "wires": [
+            [
+                "e0183de78835924f"
+            ]
+        ]
+    },
+    {
+        "id": "5827d957c63c8899",
+        "type": "http request",
+        "z": "1ebd56605af544de",
+        "name": "PUT /defect",
+        "method": "PUT",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://semoga-lulus.vercel.app/api/defect",
+        "tls": "",
+        "persist": true,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "Authorization",
+                "keyValue": "",
+                "valueType": "msg",
+                "valueValue": "auth"
+            }
+        ],
+        "x": 970,
+        "y": 320,
+        "wires": [
+            [
+                "e1fc32bce099c21b"
+            ]
+        ]
+    },
+    {
+        "id": "9f8b5a62cb8ebb6c",
+        "type": "function",
+        "z": "1ebd56605af544de",
+        "name": "goodman_function",
+        "func": "if(typeof global.get(\"nano2\") === \"undefined\"){\n\n} else {\n    let press = global.get(\"nano2\").pressure;\n    let letter = [];\n    \n\n    if(press <= 4){\n        letter = [\n            ,\n            {\n                payload: {processed:1,defect:1},\n                auth: \"Bearer \" + global.get(\"apitoken\")\n            }\n        ]\n    } else {\n        letter = [\n            {\n                payload: {processed:1,good:1},\n                auth: \"Bearer \" + global.get(\"apitoken\")\n            },\n\n        ]\n    }\n\n    return letter;\n}",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 710,
+        "y": 260,
+        "wires": [
+            [
+                "ce96a1e178c590cc",
+                "f4389fec4da4c8d8"
+            ],
+            [
+                "ce96a1e178c590cc",
+                "5827d957c63c8899"
+            ]
+        ]
+    },
+    {
+        "id": "e0183de78835924f",
+        "type": "debug",
+        "z": "1ebd56605af544de",
+        "name": "/processed",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1150,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "e1fc32bce099c21b",
+        "type": "debug",
+        "z": "1ebd56605af544de",
+        "name": "/defect",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1130,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "6037bb4639853623",
+        "type": "function",
+        "z": "1ebd56605af544de",
+        "name": "scada_ul_goodman",
+        "func": "if(typeof global.get(\"nano2\") === \"undefined\"){\n\n} else {\n    let press = global.get(\"nano2\").pressure;\n    \n    if(press <= 4){\n        return {\n            payload: 0\n        };\n    } else {\n        return {\n            payload: 1\n        };\n    }\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 710,
+        "y": 360,
+        "wires": [
+            [
+                "7f603de2f2b92df0"
+            ]
+        ]
+    },
+    {
+        "id": "7f603de2f2b92df0",
+        "type": "http request",
+        "z": "1ebd56605af544de",
+        "d": true,
+        "name": "scadaM1Count",
+        "method": "PUT",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "192.168.82.98:1880/scadaM1Count",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 980,
+        "y": 360,
+        "wires": [
+            [
+                "237b691f718c6a90"
+            ]
+        ]
+    },
+    {
+        "id": "237b691f718c6a90",
+        "type": "debug",
+        "z": "1ebd56605af544de",
+        "name": "put",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1130,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "ce96a1e178c590cc",
+        "type": "http request",
+        "z": "1ebd56605af544de",
+        "name": "PUT /kurangiStock",
+        "method": "PUT",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://semoga-lulus.vercel.app/api/kurangiStock",
+        "tls": "",
+        "persist": true,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "Authorization",
+                "keyValue": "",
+                "valueType": "msg",
+                "valueValue": "auth"
+            }
+        ],
+        "x": 990,
+        "y": 280,
+        "wires": [
+            [
+                "8d3f35182f27686f"
+            ]
+        ]
+    },
+    {
+        "id": "8d3f35182f27686f",
+        "type": "debug",
+        "z": "1ebd56605af544de",
+        "name": "/kurangiStock",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1180,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "e272a69a8a0ca37d",
+        "type": "link in",
+        "z": "1ebd56605af544de",
+        "name": "breakdowns",
+        "links": [
+            "742d6330fe8df62b"
+        ],
+        "x": 125,
+        "y": 820,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "dfe7c97ff45164d7",
+        "type": "function",
+        "z": "1ebd56605af544de",
+        "name": "breakman_function",
+        "func": "if ((msg.payload. temperature > 120 && msg.payload.temperature < 200) || msg.payload.pressure > 8.5 || msg.payload.vibration >= 600 || msg.payload.strain >= 200) {\n    global.set(\"breakdown\", true);\n    global.set(\"cylinder\", 0)\n\n    if(typeof global.get(\"hist\") === \"undefined\"){\n        global.set(\"hist\", [[\"breakdown\",Date.now()]]);\n    } else {\n        let hist = global.get(\"hist\");\n        hist.push([\"breakdown\",Date.now()]);\n        global.set(\"hist\",hist);\n    }\n\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 250,
+        "y": 820,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c06ed6d7d6d19164",
+        "type": "inject",
+        "z": "1ebd56605af544de",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 620,
+        "y": 420,
+        "wires": [
+            [
+                "ad465b69f8982676"
+            ]
+        ]
+    },
+    {
+        "id": "ad465b69f8982676",
+        "type": "function",
+        "z": "1ebd56605af544de",
+        "name": "function 2",
+        "func": "return {\n    payload: {processed:1,good:1},\n    auth: \"Bearer \" + global.get(\"apitoken\")\n};",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 760,
+        "y": 420,
+        "wires": [
+            [
+                "f4389fec4da4c8d8",
+                "ce96a1e178c590cc"
+            ]
+        ]
+    },
+    {
+        "id": "f755a50b4eb0f653",
+        "type": "inject",
+        "z": "1ebd56605af544de",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 110,
+        "y": 320,
+        "wires": [
+            [
+                "fb8710205d9b2387"
+            ]
+        ]
+    },
+    {
+        "id": "fb8710205d9b2387",
+        "type": "delay",
+        "z": "1ebd56605af544de",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "10",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 240,
+        "y": 320,
+        "wires": [
+            [
+                "c72704f6dc73ad7c"
+            ]
+        ]
+    },
+    {
+        "id": "c72704f6dc73ad7c",
+        "type": "change",
+        "z": "1ebd56605af544de",
+        "name": "",
+        "rules": [
+            {
+                "t": "delete",
+                "p": "hist",
+                "pt": "global"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 410,
+        "y": 320,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "308ab7e55fd450b0",
+        "type": "inject",
+        "z": "1ebd56605af544de",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "0",
+        "payloadType": "num",
+        "x": 670,
+        "y": 120,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "25fc81768b0b4578",
+        "type": "inject",
+        "z": "1ebd56605af544de",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "0",
+        "payloadType": "num",
+        "x": 650,
+        "y": 160,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "bdb4487b6416e477",
+        "type": "inject",
+        "z": "1ebd56605af544de",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "1",
+        "payloadType": "num",
+        "x": 1210,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "69b2628d5632bf62",
+        "type": "inject",
+        "z": "1ebd56605af544de",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "1",
+        "payloadType": "num",
+        "x": 570,
+        "y": 60,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "52c913c702830ed7",
+        "type": "serial in",
+        "z": "29ef18f01715030b",
+        "name": "",
+        "serial": "e261331466778273",
+        "x": 430,
+        "y": 260,
+        "wires": [
+            [
+                "ed5cc7699420cabe",
+                "4c48e84e2d5f2650"
+            ]
+        ]
+    },
+    {
+        "id": "f6f6d4e3c5440189",
+        "type": "debug",
+        "z": "29ef18f01715030b",
+        "name": "nano1",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload.temperature",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 910,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "fb341c62581ae88d",
+        "type": "serial in",
+        "z": "29ef18f01715030b",
+        "name": "",
+        "serial": "e39ff0824cf944ba",
+        "x": 430,
+        "y": 380,
+        "wires": [
+            [
+                "a855be72aea8865e",
+                "ed5cc7699420cabe"
+            ]
+        ]
+    },
+    {
+        "id": "6a96da31c5f75a9e",
+        "type": "debug",
+        "z": "29ef18f01715030b",
+        "name": "nano2",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 910,
+        "y": 380,
+        "wires": []
+    },
+    {
+        "id": "ed5cc7699420cabe",
+        "type": "function",
+        "z": "29ef18f01715030b",
+        "name": "nanoman_function",
+        "func": "var d = new Date();\nvar _resultDate = d.toLocaleDateString('en-GB', { timeZone: 'Asia/Jakarta', year: 'numeric', month: '2-digit', day: '2-digit', hour: `2-digit`, minute: `2-digit`, second: `2-digit`, hour12: false }).split(\" \")[1];\n\nlet input = JSON.parse(msg.payload.replaceAll(\"NAN\", \"-1\"));\nlet output = {};\n\nif(input[0] == \"0\"){\n    output = {\n        status: 0,\n        temperature: input[1],\n        strain: input[2],\n        vibration: input[3],\n        lastUpdate: Date.now(),\n        port: msg.port\n    };\n    global.set(\"nano1\", output);\n\n    context.set(\"last1\", _resultDate);\n    if(typeof context.get(\"last2\") === \"undefined\"){\n        node.status(\"nano1:\" + _resultDate + \" nano2:\" + \" -\")\n    } else {\n        node.status(\"nano1:\" + _resultDate + \" nano2:\" + context.get(\"last2\"))\n    }\n\n    return [{payload:output},]\n} else if(input[0] == \"1\"){\n    output = {\n        status: input[0],\n        voltage: input[1],\n        current: input[2],\n        power: input[3],\n        energy: input[4],\n        frequency: input[5],\n        pf: input[6],\n        pressure: ((input[7]-88)/75),\n        lastUpdate: Date.now(),\n        port: msg.port\n    };\n    global.set(\"nano2\", output);\n\n    context.set(\"last2\", _resultDate);\n    if (typeof context.get(\"last1\") === \"undefined\") {\n        node.status(\"nano1:\" + \" -\" + \" nano2:\" + _resultDate)\n    } else {\n        node.status(\"nano1:\" + context.get(\"last1\") + \" nano2:\" + _resultDate)\n    }\n\n    return [,{ payload: output }]\n}",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 670,
+        "y": 320,
+        "wires": [
+            [
+                "f6f6d4e3c5440189",
+                "742d6330fe8df62b"
+            ],
+            [
+                "6a96da31c5f75a9e",
+                "e0105d0d26bd9f16"
+            ]
+        ]
+    },
+    {
+        "id": "3830a5c00eea71bd",
+        "type": "serial control",
+        "z": "29ef18f01715030b",
+        "name": "",
+        "serial": "e261331466778273",
+        "x": 850,
+        "y": 200,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "742d6330fe8df62b",
+        "type": "link out",
+        "z": "29ef18f01715030b",
+        "name": "nano1",
+        "mode": "link",
+        "links": [
+            "1dbb68dbf06ee4e3",
+            "8e2c0125f1d90660",
+            "e272a69a8a0ca37d"
+        ],
+        "x": 875,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "e0105d0d26bd9f16",
+        "type": "link out",
+        "z": "29ef18f01715030b",
+        "name": "nano2",
+        "mode": "link",
+        "links": [
+            "b2fd13c9e744a624",
+            "c7a940821be9facc",
+            "8e2c0125f1d90660"
+        ],
+        "x": 875,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "ef05f195a020265f",
+        "type": "serial control",
+        "z": "29ef18f01715030b",
+        "name": "",
+        "serial": "e39ff0824cf944ba",
+        "x": 850,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "1e1eec29f427ed64",
+        "type": "function",
+        "z": "29ef18f01715030b",
+        "name": "Format Time",
+        "func": "var d = new Date();\nvar _resultDate = d.toLocaleDateString('en-GB', { timeZone: 'Asia/Jakarta', year: 'numeric', month: '2-digit', day: '2-digit', hour: `2-digit`, minute: `2-digit`, second: `2-digit`, hour12: false });\nvar datearray =_resultDate.split(\" \")\n\n\nString.prototype.removeCharAt = function (i) {\n    var tmp = this.split(''); // convert to an array\n    tmp.splice(i - 1 , 1); // remove 1 element from the array (adjusting for non-zero-indexed counts)\n    return tmp.join(''); // reconstruct the string\n}\n//datearray[0] = datearray[0].removeCharAt(11)\n//datearray[0] = datearray[0].removeCharAt(8)\n//datearray[0] = datearray[0].removeCharAt(7)\n\nmsg.payload = _resultDate;\n\nnode.status({ fill: \"blue\", shape: \"ring\", text: msg.payload });\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1130,
+        "y": 40,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "088f174866532e3c",
+        "type": "inject",
+        "z": "29ef18f01715030b",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 980,
+        "y": 40,
+        "wires": [
+            [
+                "1e1eec29f427ed64"
+            ]
+        ]
+    },
+    {
+        "id": "4c48e84e2d5f2650",
+        "type": "trigger",
+        "z": "29ef18f01715030b",
+        "name": "wekker1",
+        "op1": "",
+        "op2": "{\"enabled\":false}",
+        "op1type": "nul",
+        "op2type": "json",
+        "duration": "2500",
+        "extend": true,
+        "overrideDelay": false,
+        "units": "ms",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 640,
+        "y": 260,
+        "wires": [
+            [
+                "3830a5c00eea71bd",
+                "5eb4345f5c13ef44"
+            ]
+        ]
+    },
+    {
+        "id": "5eb4345f5c13ef44",
+        "type": "trigger",
+        "z": "29ef18f01715030b",
+        "name": "",
+        "op1": "",
+        "op2": "{\"enabled\":true}",
+        "op1type": "nul",
+        "op2type": "json",
+        "duration": "1",
+        "extend": true,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 640,
+        "y": 200,
+        "wires": [
+            [
+                "3830a5c00eea71bd",
+                "c6cea0afdbb38238"
+            ]
+        ]
+    },
+    {
+        "id": "a855be72aea8865e",
+        "type": "trigger",
+        "z": "29ef18f01715030b",
+        "name": "wekker2",
+        "op1": "",
+        "op2": "{\"enabled\":false}",
+        "op1type": "nul",
+        "op2type": "json",
+        "duration": "2500",
+        "extend": true,
+        "overrideDelay": false,
+        "units": "ms",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 640,
+        "y": 380,
+        "wires": [
+            [
+                "7579d6b23b5f560b",
+                "ef05f195a020265f"
+            ]
+        ]
+    },
+    {
+        "id": "7579d6b23b5f560b",
+        "type": "trigger",
+        "z": "29ef18f01715030b",
+        "name": "",
+        "op1": "",
+        "op2": "{\"enabled\":true}",
+        "op1type": "nul",
+        "op2type": "json",
+        "duration": "1",
+        "extend": true,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 640,
+        "y": 440,
+        "wires": [
+            [
+                "ef05f195a020265f",
+                "9108028dd677d619"
+            ]
+        ]
+    },
+    {
+        "id": "c6cea0afdbb38238",
+        "type": "debug",
+        "z": "29ef18f01715030b",
+        "name": "wekker1",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 860,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "9108028dd677d619",
+        "type": "debug",
+        "z": "29ef18f01715030b",
+        "name": "wekker2",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 860,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "ced3f606249ca80b",
+        "type": "function",
+        "z": "29ef18f01715030b",
+        "name": "wekkerman_function",
+        "func": "if(typeof global.get(\"nano1\") === \"undefined\" || typeof global.get(\"nano2\") === \"undefined\"){\n    return [msg,msg];\n} else {\n    let mess = [,]\n    let nano1 = global.get(\"nano1\");\n    let nano2 = global.get(\"nano2\")\n\n    if(Date.now() - nano1.lastUpdate >= 5000){\n        if(nano1.port == \"/dev/ttyUSB0\"){\n            mess[0] = {}\n        } else if(nano1.port == \"/dev/ttyUSB1\") {\n            mess[1] = {}\n        }\n    }\n\n    if (Date.now() - nano2.lastUpdate >= 5000){\n        if (nano2.port == \"/dev/ttyUSB0\") {\n            mess[0] = {}\n        } else if (nano2.port == \"/dev/ttyUSB1\") {\n            mess[1] = {}\n        }\n    }\n\n    return mess;\n}",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 380,
+        "y": 320,
+        "wires": [
+            [
+                "4c48e84e2d5f2650"
+            ],
+            [
+                "a855be72aea8865e"
+            ]
+        ]
+    },
+    {
+        "id": "0c27b6c16d73a27e",
+        "type": "inject",
+        "z": "29ef18f01715030b",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            }
+        ],
+        "repeat": "5",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "true",
+        "payloadType": "bool",
+        "x": 210,
+        "y": 320,
+        "wires": [
+            [
+                "ced3f606249ca80b"
+            ]
+        ]
+    },
+    {
+        "id": "e2014d717ad7f280",
+        "type": "http in",
+        "z": "9d40c9a1934f0d98",
+        "name": "",
+        "url": "/params",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 90,
+        "y": 40,
+        "wires": [
+            [
+                "7cd303f244b8b125"
+            ]
+        ]
+    },
+    {
+        "id": "d5af9fe8357c6f78",
+        "type": "http response",
+        "z": "9d40c9a1934f0d98",
+        "name": "",
+        "statusCode": "200",
+        "headers": {},
+        "x": 440,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "7cd303f244b8b125",
+        "type": "function",
+        "z": "9d40c9a1934f0d98",
+        "name": "get_paramsman",
+        "func": "msg.payload = [global.get(\"nano1\"),global.get(\"nano2\"),global.get(\"hist\")[global.get(\"hist\").length - 1][0],Date.now()];\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 260,
+        "y": 40,
+        "wires": [
+            [
+                "d5af9fe8357c6f78"
+            ]
+        ]
+    },
+    {
+        "id": "7ab0b01299e3f202",
+        "type": "http in",
+        "z": "9d40c9a1934f0d98",
+        "name": "",
+        "url": "/lock",
+        "method": "put",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 80,
+        "y": 80,
+        "wires": [
+            [
+                "60c69bf267d0efca",
+                "6fe11b17807c6a43"
+            ]
+        ]
+    },
+    {
+        "id": "60c69bf267d0efca",
+        "type": "function",
+        "z": "9d40c9a1934f0d98",
+        "name": "put_lockman",
+        "func": "if(msg.payload == \"true\"){\n    global.set(\"lock\", true);\n} else {\n    global.set(\"lock\", false);\n}\n\nmsg.payload = \"Successfully changed state to \" + msg.payload;\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 230,
+        "y": 80,
+        "wires": [
+            [
+                "488cbf9ea10aad2f",
+                "206c3ee4d1d1c3e9"
+            ]
+        ]
+    },
+    {
+        "id": "488cbf9ea10aad2f",
+        "type": "http response",
+        "z": "9d40c9a1934f0d98",
+        "name": "",
+        "statusCode": "200",
+        "headers": {},
+        "x": 380,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "6fe11b17807c6a43",
+        "type": "debug",
+        "z": "9d40c9a1934f0d98",
+        "name": "/lock",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 230,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "ad16c09d88693ea4",
+        "type": "http in",
+        "z": "9d40c9a1934f0d98",
+        "name": "",
+        "url": "/lockState",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 100,
+        "y": 160,
+        "wires": [
+            [
+                "0c43b9d824a4604c",
+                "b66529bb3fbf8e6d"
+            ]
+        ]
+    },
+    {
+        "id": "0c43b9d824a4604c",
+        "type": "function",
+        "z": "9d40c9a1934f0d98",
+        "name": "get_lockman_state",
+        "func": "if(typeof global.get(\"lock\") === \"undefined\"){\n    msg.payload = \"false\";\n} else {\n    msg.payload = global.get(\"lock\").toString();\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 290,
+        "y": 160,
+        "wires": [
+            [
+                "a1d19f73dea107cd"
+            ]
+        ]
+    },
+    {
+        "id": "a1d19f73dea107cd",
+        "type": "http response",
+        "z": "9d40c9a1934f0d98",
+        "name": "",
+        "statusCode": "200",
+        "headers": {},
+        "x": 460,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "b66529bb3fbf8e6d",
+        "type": "debug",
+        "z": "9d40c9a1934f0d98",
+        "name": "/lockState",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 320,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "852a08d7958349c8",
+        "type": "http request",
+        "z": "9d40c9a1934f0d98",
+        "name": "POST /login",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://semoga-lulus.vercel.app/api/login",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 430,
+        "y": 300,
+        "wires": [
+            [
+                "a61d2df8c4b128e1",
+                "855432b0ce359289"
+            ]
+        ]
+    },
+    {
+        "id": "b06d1035e00c6e5c",
+        "type": "inject",
+        "z": "9d40c9a1934f0d98",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 90,
+        "y": 300,
+        "wires": [
+            [
+                "f39ecb88e0ea62bd"
+            ]
+        ]
+    },
+    {
+        "id": "a61d2df8c4b128e1",
+        "type": "json",
+        "z": "9d40c9a1934f0d98",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 590,
+        "y": 300,
+        "wires": [
+            [
+                "b2f01de0ae832c4a",
+                "6b5599f975b0cae7",
+                "bb8bccfa6664d803"
+            ]
+        ]
+    },
+    {
+        "id": "f39ecb88e0ea62bd",
+        "type": "function",
+        "z": "9d40c9a1934f0d98",
+        "name": "logman_function",
+        "func": "return {\n    payload: {\n        username:\"aldo762\",\n        password:\"yippee\"\n    },\n    timestamp: Date.now()\n};",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 240,
+        "y": 300,
+        "wires": [
+            [
+                "852a08d7958349c8",
+                "5f865b884b4f1893"
+            ]
+        ]
+    },
+    {
+        "id": "855432b0ce359289",
+        "type": "debug",
+        "z": "9d40c9a1934f0d98",
+        "name": "login",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 590,
+        "y": 340,
+        "wires": []
+    },
+    {
+        "id": "5245923148051fad",
+        "type": "http request",
+        "z": "9d40c9a1934f0d98",
+        "name": "PUT /updateStatus",
+        "method": "PUT",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://semoga-lulus.vercel.app/api/updateStatus",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "Authorization",
+                "keyValue": "",
+                "valueType": "msg",
+                "valueValue": "auth"
+            }
+        ],
+        "x": 990,
+        "y": 260,
+        "wires": [
+            [
+                "642bfee5462a1293",
+                "e0df5d5f4f40fc19"
+            ]
+        ]
+    },
+    {
+        "id": "b2f01de0ae832c4a",
+        "type": "function",
+        "z": "9d40c9a1934f0d98",
+        "name": "putman_function",
+        "func": "let deepcopieddata = RED.util.cloneMessage(msg);\nif (deepcopieddata.payload.message == \"Success Login\") {\n    global.set(\"apitoken\", deepcopieddata.payload.data.token);\n    context.set(\"loginTime\", Date.now() - deepcopieddata.timestamp);\n    msg = {\n        payload: {\n            // machine_id: 1,\n            status: 1\n        },\n        auth: \"Bearer \" + deepcopieddata.payload.data.token\n    };\n    return msg;\n} else if (deepcopieddata.payload.message == \"P\") {\n    return {\n        payload: {\n            // machine_id: 1,\n            status: 1\n        },\n        auth: \"Bearer \" + global.get(\"apitoken\")\n    };\n} else {\n    node.warn(deepcopieddata.payload.message);\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 790,
+        "y": 260,
+        "wires": [
+            [
+                "5245923148051fad"
+            ]
+        ]
+    },
+    {
+        "id": "642bfee5462a1293",
+        "type": "debug",
+        "z": "9d40c9a1934f0d98",
+        "name": "/updateStatus",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1340,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "32c1bc69fd216e74",
+        "type": "function",
+        "z": "9d40c9a1934f0d98",
+        "name": "relogman_function",
+        "func": "if(typeof global.get(\"apitoken\") === \"undefined\"){\n    node.status({fill:\"red\",shape:\"ring\",text:\"retrying connection...\"});\n    return {};\n} else {\n    node.status({fill:\"green\",shape:\"dot\",text:\"connected\"});\n    node.log(\"Successfully connected to database\")\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 310,
+        "y": 340,
+        "wires": [
+            [
+                "f39ecb88e0ea62bd"
+            ]
+        ]
+    },
+    {
+        "id": "5f865b884b4f1893",
+        "type": "delay",
+        "z": "9d40c9a1934f0d98",
+        "name": "",
+        "pauseType": "delay",
+        "timeout": "10",
+        "timeoutUnits": "seconds",
+        "rate": "1",
+        "nbRateUnits": "1",
+        "rateUnits": "second",
+        "randomFirst": "1",
+        "randomLast": "5",
+        "randomUnits": "seconds",
+        "drop": false,
+        "allowrate": false,
+        "outputs": 1,
+        "x": 140,
+        "y": 340,
+        "wires": [
+            [
+                "32c1bc69fd216e74"
+            ]
+        ]
+    },
+    {
+        "id": "6cb79d26fe44cb3d",
+        "type": "http request",
+        "z": "9d40c9a1934f0d98",
+        "name": "PUT /updateTimer",
+        "method": "PUT",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://semoga-lulus.vercel.app/api/updateTimer",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "Authorization",
+                "keyValue": "",
+                "valueType": "msg",
+                "valueValue": "auth"
+            }
+        ],
+        "x": 570,
+        "y": 500,
+        "wires": [
+            [
+                "217dc0883fd64105"
+            ]
+        ]
+    },
+    {
+        "id": "2c537a99649be76a",
+        "type": "function",
+        "z": "9d40c9a1934f0d98",
+        "name": "putman_times_function",
+        "func": "if(typeof global.get(\"hist\") === \"undefined\"){\n\n} else {\n    let hist = global.get(\"hist\");\n    let times = {\n        setup: 0,\n        cycle: 0,\n        stoppage: 0,\n        breakdown: 0\n    }\n\n    //node.status({fill:\"blue\",shape:\"ring\",text:last.toString()});\n\n    hist.forEach(function(element, index, array) {\n        if(array.length <= 1){\n            times[element[0]] += (Date.now() - element[1]);\n        } else if(index > 0){\n            times[array[index - 1][0]] += (element[1] - array[index - 1][1]);\n            if(index >= array.length - 1){\n                times[element[0]] += (Date.now() - element[1]);\n            }\n        }\n    });\n\n    node.status({fill:\"black\",shape:\"ring\",text: JSON.stringify(times)});\n\n    return msg = {\n        payload: JSON.parse(JSON.stringify(times)),\n        auth: \"Bearer \" + global.get(\"apitoken\")\n    };\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 310,
+        "y": 500,
+        "wires": [
+            [
+                "c2c0b4beecaa3e8f",
+                "bb28226789e51726",
+                "6cb79d26fe44cb3d"
+            ]
+        ]
+    },
+    {
+        "id": "217dc0883fd64105",
+        "type": "debug",
+        "z": "9d40c9a1934f0d98",
+        "name": "/updateTimer",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 750,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "a27670ebff3d39fa",
+        "type": "context-monitor",
+        "z": "9d40c9a1934f0d98",
+        "name": "",
+        "monitoring": [
+            {
+                "scope": "global",
+                "key": "hist"
+            }
+        ],
+        "tostatus": false,
+        "x": 90,
+        "y": 460,
+        "wires": [
+            [
+                "2c537a99649be76a"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "e21f19036b307c19",
+        "type": "inject",
+        "z": "9d40c9a1934f0d98",
+        "name": "",
+        "props": [],
+        "repeat": "3600",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 90,
+        "y": 520,
+        "wires": [
+            [
+                "2c537a99649be76a"
+            ]
+        ]
+    },
+    {
+        "id": "c2c0b4beecaa3e8f",
+        "type": "debug",
+        "z": "9d40c9a1934f0d98",
+        "name": "times",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 610,
+        "y": 540,
+        "wires": []
+    },
+    {
+        "id": "6b5599f975b0cae7",
+        "type": "function",
+        "z": "9d40c9a1934f0d98",
+        "name": "postman_times_function",
+        "func": "var d = new Date();\nvar _resultDate = d.toLocaleDateString('en-GB', { timeZone: 'Asia/Jakarta', year: 'numeric', month: '2-digit', day: '2-digit', hour: `2-digit`, minute: `2-digit`, second: `2-digit`, hour12: false, fractionalSecondDigits: 3 });\n\nif(typeof global.get(\"hist\") === \"undefined\"){\n\n} else {\n    let hist = global.get(\"hist\");\n    let times = {\n        setup: 0.0001,\n        cycle: 0.0001,\n        stoppage: 0.0001,\n        breakdown: 0.0001,\n        tanggal: _resultDate\n    }\n\n    \n    //node.status({fill:\"blue\",shape:\"ring\",text:last.toString()});\n\n    hist.forEach(function(element, index, array) {\n        if(array.length <= 1){\n            times[element[0]] += (Date.now() - element[1]);\n        } else if(index > 0){\n            times[array[index - 1][0]] += (element[1] - array[index - 1][1]);\n            if(index >= array.length - 1){\n                times[element[0]] += (Date.now() - element[1]);\n            }\n        }\n    });\n    \n\n    return [\n        {\n            payload: JSON.parse(JSON.stringify(times)),\n            auth: \"Bearer \" + global.get(\"apitoken\")\n        },\n        {\n            payload: {\n                machine_id:1,\n            },\n            auth: \"Bearer \" + global.get(\"apitoken\")\n        },\n    ];\n}",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 850,
+        "y": 400,
+        "wires": [
+            [
+                "289f5b4a1f2606c4",
+                "86129af3ded25ae7"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "289f5b4a1f2606c4",
+        "type": "http request",
+        "z": "9d40c9a1934f0d98",
+        "name": "POST /insertTrigger",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://semoga-lulus.vercel.app/api/trigDoc",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "Authorization",
+                "keyValue": "",
+                "valueType": "msg",
+                "valueValue": "auth"
+            }
+        ],
+        "x": 1140,
+        "y": 400,
+        "wires": [
+            [
+                "37ae060d7146a68b"
+            ]
+        ]
+    },
+    {
+        "id": "37ae060d7146a68b",
+        "type": "debug",
+        "z": "9d40c9a1934f0d98",
+        "name": "/insertTrigger",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1330,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "206c3ee4d1d1c3e9",
+        "type": "link out",
+        "z": "9d40c9a1934f0d98",
+        "name": "lock",
+        "mode": "link",
+        "links": [
+            "754a0e8a94b3d63c"
+        ],
+        "x": 375,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "05887508206d355c",
+        "type": "function",
+        "z": "9d40c9a1934f0d98",
+        "name": "pingman_function",
+        "func": "return {payload:{message:\"P\"}};",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1050,
+        "y": 320,
+        "wires": [
+            [
+                "b2f01de0ae832c4a"
+            ]
+        ]
+    },
+    {
+        "id": "ba7fd8fd0ead7735",
+        "type": "inject",
+        "z": "9d40c9a1934f0d98",
+        "name": "",
+        "props": [],
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 90,
+        "y": 580,
+        "wires": [
+            [
+                "37b838f410252ec2",
+                "62fae9a5761d346f"
+            ]
+        ]
+    },
+    {
+        "id": "227d1d8a56eb3961",
+        "type": "http request",
+        "z": "9d40c9a1934f0d98",
+        "name": "POST /login",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://semoga-lulus.vercel.app/api/login",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 1010,
+        "y": 720,
+        "wires": [
+            [
+                "ae8016adedf24ec3",
+                "10a8490fa36d52ce"
+            ]
+        ]
+    },
+    {
+        "id": "ae8016adedf24ec3",
+        "type": "json",
+        "z": "9d40c9a1934f0d98",
+        "name": "",
+        "property": "payload",
+        "action": "",
+        "pretty": false,
+        "x": 1170,
+        "y": 720,
+        "wires": [
+            [
+                "6b0d871964037340"
+            ]
+        ]
+    },
+    {
+        "id": "a13994b6d355134d",
+        "type": "function",
+        "z": "9d40c9a1934f0d98",
+        "name": "logman_function",
+        "func": "return {\n    payload: {\n        username:\"aldo762\",\n        password:\"yippee\"\n    },\n    timestamp: Date.now()\n};",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 820,
+        "y": 660,
+        "wires": [
+            [
+                "227d1d8a56eb3961",
+                "bb8bccfa6664d803"
+            ]
+        ]
+    },
+    {
+        "id": "10a8490fa36d52ce",
+        "type": "debug",
+        "z": "9d40c9a1934f0d98",
+        "name": "login",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1170,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "6b0d871964037340",
+        "type": "function",
+        "z": "9d40c9a1934f0d98",
+        "name": "putman_function",
+        "func": "let deepcopieddata = RED.util.cloneMessage(msg);\nif (deepcopieddata.payload.message == \"Success Login\") {\n    global.set(\"apitoken\", deepcopieddata.payload.data.token);\n    context.set(\"loginTime\", Date.now() - deepcopieddata.timestamp);\n} else {\n    node.warn(deepcopieddata.payload.message);\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1330,
+        "y": 720,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "9c55b1911dc46116",
+        "type": "http request",
+        "z": "9d40c9a1934f0d98",
+        "name": "POST /insertSens",
+        "method": "POST",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://semoga-lulus.vercel.app/api/insertSens",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "Authorization",
+                "keyValue": "",
+                "valueType": "msg",
+                "valueValue": "auth"
+            }
+        ],
+        "x": 490,
+        "y": 580,
+        "wires": [
+            [
+                "7826b0d4b49c9d1b"
+            ]
+        ]
+    },
+    {
+        "id": "37b838f410252ec2",
+        "type": "function",
+        "z": "9d40c9a1934f0d98",
+        "name": "postman_function",
+        "func": "var d = new Date();\nvar _resultDate = d.toLocaleDateString('en-GB', { timeZone: 'UTC', year: 'numeric', month: '2-digit', day: '2-digit', hour: `2-digit`, minute: `2-digit`, second: `2-digit`, hour12: false, fractionalSecondDigits: 3 });\n\nlet nano1 = global.get(\"nano1\");\nlet nano2 = global.get(\"nano2\");\n\nreturn {\n    payload: {\n        temperature: nano1.temperature,\n        strain: nano1.strain,\n        vibration: nano1.vibration,\n        pressure: nano2.pressure,\n        voltage: nano2.voltage,\n        current: nano2.current,\n        power: nano2.power,\n        energy: nano2.energy,\n        frequency: nano2.frequency,\n        pf: nano2.pf,\n        sent: _resultDate\n    },\n    auth: \"Bearer \" + global.get(\"apitoken\")\n};",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 290,
+        "y": 580,
+        "wires": [
+            [
+                "9c55b1911dc46116"
+            ]
+        ]
+    },
+    {
+        "id": "62fae9a5761d346f",
+        "type": "function",
+        "z": "9d40c9a1934f0d98",
+        "name": "delman_function",
+        "func": "return {auth: \"Bearer \" + global.get(\"apitoken\")};",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 280,
+        "y": 620,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7826b0d4b49c9d1b",
+        "type": "debug",
+        "z": "9d40c9a1934f0d98",
+        "name": "/insertSens",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 690,
+        "y": 580,
+        "wires": []
+    },
+    {
+        "id": "085c57851630ed0f",
+        "type": "inject",
+        "z": "9d40c9a1934f0d98",
+        "d": true,
+        "name": "",
+        "props": [],
+        "repeat": "30",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 90,
+        "y": 780,
+        "wires": [
+            [
+                "2712e46c7fb4d9cc"
+            ]
+        ]
+    },
+    {
+        "id": "2712e46c7fb4d9cc",
+        "type": "function",
+        "z": "9d40c9a1934f0d98",
+        "name": "ltman_function",
+        "func": "return {payload:30,auth:\"Bearer \" + global.get(\"apitoken\")};",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 240,
+        "y": 780,
+        "wires": [
+            [
+                "cfa3f22889807ad3"
+            ]
+        ]
+    },
+    {
+        "id": "cfa3f22889807ad3",
+        "type": "http request",
+        "z": "9d40c9a1934f0d98",
+        "name": "PUT /updateLT",
+        "method": "PUT",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://semoga-lulus.vercel.app/api/updateLT",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "Authorization",
+                "keyValue": "",
+                "valueType": "msg",
+                "valueValue": "auth"
+            }
+        ],
+        "x": 420,
+        "y": 780,
+        "wires": [
+            [
+                "730b03feeaa1fe3a"
+            ]
+        ]
+    },
+    {
+        "id": "730b03feeaa1fe3a",
+        "type": "debug",
+        "z": "9d40c9a1934f0d98",
+        "name": "/updateLT",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 580,
+        "y": 780,
+        "wires": []
+    },
+    {
+        "id": "51503f8eec310b1e",
+        "type": "http request",
+        "z": "9d40c9a1934f0d98",
+        "d": true,
+        "name": "scadaM1Cylinder",
+        "method": "PUT",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "192.168.82.98:1880/scadaM1Cylinder",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 870,
+        "y": 140,
+        "wires": [
+            [
+                "0c356517ab428e90"
+            ]
+        ]
+    },
+    {
+        "id": "0c356517ab428e90",
+        "type": "debug",
+        "z": "9d40c9a1934f0d98",
+        "d": true,
+        "name": "scadaM1Cylinder",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1070,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "1c21490a0101b311",
+        "type": "context-monitor",
+        "z": "9d40c9a1934f0d98",
+        "name": "",
+        "monitoring": [
+            {
+                "scope": "global",
+                "key": "cylinder"
+            }
+        ],
+        "tostatus": false,
+        "x": 630,
+        "y": 140,
+        "wires": [
+            [
+                "51503f8eec310b1e"
+            ],
+            [
+                "57f8d644c9a94dab"
+            ]
+        ]
+    },
+    {
+        "id": "bb28226789e51726",
+        "type": "http request",
+        "z": "9d40c9a1934f0d98",
+        "d": true,
+        "name": "scadaM1Times",
+        "method": "PUT",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "192.168.82.98:1880/scadaM1Times",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 560,
+        "y": 460,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "c77d3b7eafb1404f",
+        "type": "context-monitor",
+        "z": "9d40c9a1934f0d98",
+        "name": "",
+        "monitoring": [
+            {
+                "scope": "global",
+                "key": "breakdown"
+            }
+        ],
+        "tostatus": false,
+        "x": 660,
+        "y": 40,
+        "wires": [
+            [
+                "55e6908a16047157"
+            ],
+            []
+        ]
+    },
+    {
+        "id": "55e6908a16047157",
+        "type": "function",
+        "z": "9d40c9a1934f0d98",
+        "name": "bdman_function",
+        "func": "var d = new Date();\nvar _resultDate = d.toLocaleDateString('en-GB', { timeZone: 'UTC', year: 'numeric', month: '2-digit', day: '2-digit', hour: `2-digit`, minute: `2-digit`, second: `2-digit`, hour12: false, fractionalSecondDigits: 3 });\n\nif (global.get(\"breakdown\")) {\n    return {\n        payload: {\n            breakdown: true,\n            sent: _resultDate\n        },\n        auth: \"Bearer \" + global.get(\"apitoken\")\n    }\n} else {\n    return {\n        payload: {\n            breakdown: false,\n            sent: _resultDate\n        },\n        auth: \"Bearer \" + global.get(\"apitoken\")\n    }\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 860,
+        "y": 40,
+        "wires": [
+            [
+                "baf030b7a9f85f2c"
+            ]
+        ]
+    },
+    {
+        "id": "baf030b7a9f85f2c",
+        "type": "http request",
+        "z": "9d40c9a1934f0d98",
+        "name": "PUT /updateBreakdown",
+        "method": "PUT",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://semoga-lulus.vercel.app/api/updateBreakdown",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "Authorization",
+                "keyValue": "",
+                "valueType": "msg",
+                "valueValue": "auth"
+            }
+        ],
+        "x": 1070,
+        "y": 40,
+        "wires": [
+            [
+                "a3bf6e9384fc5012"
+            ]
+        ]
+    },
+    {
+        "id": "a3bf6e9384fc5012",
+        "type": "debug",
+        "z": "9d40c9a1934f0d98",
+        "name": "/updateBreakdown",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1290,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "e0df5d5f4f40fc19",
+        "type": "trigger",
+        "z": "9d40c9a1934f0d98",
+        "name": "",
+        "op1": "",
+        "op2": "",
+        "op1type": "nul",
+        "op2type": "payl",
+        "duration": "30",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "s",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 830,
+        "y": 320,
+        "wires": [
+            [
+                "05887508206d355c"
+            ]
+        ]
+    },
+    {
+        "id": "bb8bccfa6664d803",
+        "type": "trigger",
+        "z": "9d40c9a1934f0d98",
+        "name": "",
+        "op1": "",
+        "op2": "",
+        "op1type": "nul",
+        "op2type": "payl",
+        "duration": "1",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "hr",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 830,
+        "y": 700,
+        "wires": [
+            [
+                "a13994b6d355134d"
+            ]
+        ]
+    },
+    {
+        "id": "86129af3ded25ae7",
+        "type": "trigger",
+        "z": "9d40c9a1934f0d98",
+        "name": "",
+        "op1": "",
+        "op2": "",
+        "op1type": "nul",
+        "op2type": "payl",
+        "duration": "10",
+        "extend": false,
+        "overrideDelay": false,
+        "units": "min",
+        "reset": "",
+        "bytopic": "all",
+        "topic": "topic",
+        "outputs": 1,
+        "x": 850,
+        "y": 460,
+        "wires": [
+            [
+                "6b5599f975b0cae7"
+            ]
+        ]
+    },
+    {
+        "id": "9e6381040aa9ecb8",
+        "type": "http request",
+        "z": "9d40c9a1934f0d98",
+        "name": "PUT /updateCylinder",
+        "method": "PUT",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://semoga-lulus.vercel.app/api/updateCylinder",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "Authorization",
+                "keyValue": "",
+                "valueType": "msg",
+                "valueValue": "auth"
+            }
+        ],
+        "x": 1060,
+        "y": 180,
+        "wires": [
+            [
+                "310f09f149992095"
+            ]
+        ]
+    },
+    {
+        "id": "310f09f149992095",
+        "type": "debug",
+        "z": "9d40c9a1934f0d98",
+        "name": "/updateCylinder",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1260,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "57f8d644c9a94dab",
+        "type": "function",
+        "z": "9d40c9a1934f0d98",
+        "name": "cylinderman_function",
+        "func": "var d = new Date();\nvar _resultDate = d.toLocaleDateString('en-GB', { timeZone: 'UTC', year: 'numeric', month: '2-digit', day: '2-digit', hour: `2-digit`, minute: `2-digit`, second: `2-digit`, hour12: false, fractionalSecondDigits: 3 });\n\nif (global.get(\"cylinder\")) {\n    return {\n        payload: {\n            cylinder: true,\n            sent: _resultDate\n        },\n        auth: \"Bearer \" + global.get(\"apitoken\")\n    }\n} else {\n    return {\n        payload: {\n            cylinder: false,\n            sent: _resultDate\n        },\n        auth: \"Bearer \" + global.get(\"apitoken\")\n    }\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 820,
+        "y": 180,
+        "wires": [
+            [
+                "9e6381040aa9ecb8"
+            ]
+        ]
+    },
+    {
+        "id": "a2ec46fc132b638c",
+        "type": "inject",
+        "z": "9d40c9a1934f0d98",
+        "name": "",
+        "props": [],
+        "repeat": "6",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 110,
+        "y": 680,
+        "wires": [
+            [
+                "2880cc888cfde51a"
+            ]
+        ]
+    },
+    {
+        "id": "2880cc888cfde51a",
+        "type": "function",
+        "z": "9d40c9a1934f0d98",
+        "name": "histman_minuter_func",
+        "func": "const now = Date.now();\n\nlet hist = global.get(\"hist\");\n\nhist.push([hist[hist.length-1][0],now]);\nglobal.set(\"hist\",hist);\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 280,
+        "y": 680,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "2e08970908b8be80",
+        "type": "inject",
+        "z": "9d40c9a1934f0d98",
+        "name": "",
+        "props": [],
+        "repeat": "30",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 90,
+        "y": 840,
+        "wires": [
+            [
+                "47d0e3acbbbaaeb3"
+            ]
+        ]
+    },
+    {
+        "id": "47d0e3acbbbaaeb3",
+        "type": "function",
+        "z": "9d40c9a1934f0d98",
+        "name": "lifetimeman_func",
+        "func": "if (typeof global.get(\"apitoken\") === \"undefined\") {\n    if (typeof context.get(\"buffer\") === \"undefined\") {\n        context.set(\"buffer\", 30);\n    } else {\n        let buffer = context.get(\"buffer\");\n        context.set(\"buffer\", buffer + 30);\n    }\n} else {\n    if(typeof context.get(\"buffer\") === \"undefined\") {\n        context.set(\"buffer\", 0);\n    }\n    msg.auth = \"Bearer \" + global.get(\"apitoken\");\n    msg.payload = {\n        timevalue: context.get(\"buffer\") + 30\n    }\n    context.set(\"buffer\", 0);\n    return msg;\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 250,
+        "y": 840,
+        "wires": [
+            [
+                "cdc3017c8240b980",
+                "834bdb3ea30c7ac3"
+            ]
+        ]
+    },
+    {
+        "id": "cdc3017c8240b980",
+        "type": "http request",
+        "z": "9d40c9a1934f0d98",
+        "name": "PUT /updateUmur",
+        "method": "PUT",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://semoga-lulus.vercel.app/api/updateUmur",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "Authorization",
+                "keyValue": "",
+                "valueType": "msg",
+                "valueValue": "auth"
+            }
+        ],
+        "x": 450,
+        "y": 840,
+        "wires": [
+            [
+                "113fe2826ba5578b"
+            ]
+        ]
+    },
+    {
+        "id": "113fe2826ba5578b",
+        "type": "debug",
+        "z": "9d40c9a1934f0d98",
+        "name": "/updateUmur",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 630,
+        "y": 840,
+        "wires": []
+    },
+    {
+        "id": "834bdb3ea30c7ac3",
+        "type": "debug",
+        "z": "9d40c9a1934f0d98",
+        "name": "debug 1",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 410,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "6de10c1933c2c053",
+        "type": "inject",
+        "z": "9d40c9a1934f0d98",
+        "name": "",
+        "props": [],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 850,
+        "y": 560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "09fa69f570f5481a",
+        "type": "inject",
+        "z": "9d40c9a1934f0d98",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "10",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 830,
+        "y": 940,
+        "wires": [
+            [
+                "ace2b345795e3f39",
+                "402e1630e4ddf4c9",
+                "0566c7d45d1d69a6",
+                "03fdf9998722de09",
+                "8aa20ba314cbb380",
+                "abd3c92109a559f0"
+            ]
+        ]
+    },
+    {
+        "id": "ace2b345795e3f39",
+        "type": "http request",
+        "z": "9d40c9a1934f0d98",
+        "name": "PUT /updateQuality",
+        "method": "PUT",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://semoga-lulus.vercel.app/api/updateQuality",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 1050,
+        "y": 860,
+        "wires": [
+            [
+                "017db9e1c4896322"
+            ]
+        ]
+    },
+    {
+        "id": "402e1630e4ddf4c9",
+        "type": "http request",
+        "z": "9d40c9a1934f0d98",
+        "name": "PUT /updateBL",
+        "method": "PUT",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://semoga-lulus.vercel.app/api/updateBL",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 1040,
+        "y": 900,
+        "wires": [
+            [
+                "ef61996975cf0caa"
+            ]
+        ]
+    },
+    {
+        "id": "0566c7d45d1d69a6",
+        "type": "http request",
+        "z": "9d40c9a1934f0d98",
+        "name": "PUT /updateOEE",
+        "method": "PUT",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://semoga-lulus.vercel.app/api/updateOEE",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 1050,
+        "y": 940,
+        "wires": [
+            [
+                "864dbaf4b453d6f5"
+            ]
+        ]
+    },
+    {
+        "id": "03fdf9998722de09",
+        "type": "http request",
+        "z": "9d40c9a1934f0d98",
+        "name": "PUT /updatePerformance",
+        "method": "PUT",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://semoga-lulus.vercel.app/api/updatePerformance",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 1070,
+        "y": 980,
+        "wires": [
+            [
+                "ee21e76f10ce1ea1"
+            ]
+        ]
+    },
+    {
+        "id": "8aa20ba314cbb380",
+        "type": "http request",
+        "z": "9d40c9a1934f0d98",
+        "name": "PUT /updateAvailability",
+        "method": "PUT",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://semoga-lulus.vercel.app/api/updateAvailability",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 1070,
+        "y": 1020,
+        "wires": [
+            [
+                "c890e18cdafd3b1f"
+            ]
+        ]
+    },
+    {
+        "id": "017db9e1c4896322",
+        "type": "debug",
+        "z": "9d40c9a1934f0d98",
+        "name": "quality",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1230,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "ef61996975cf0caa",
+        "type": "debug",
+        "z": "9d40c9a1934f0d98",
+        "name": "bigloss",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1240,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "864dbaf4b453d6f5",
+        "type": "debug",
+        "z": "9d40c9a1934f0d98",
+        "name": "OEE",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1230,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "ee21e76f10ce1ea1",
+        "type": "debug",
+        "z": "9d40c9a1934f0d98",
+        "name": "Performance",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1270,
+        "y": 980,
+        "wires": []
+    },
+    {
+        "id": "c890e18cdafd3b1f",
+        "type": "debug",
+        "z": "9d40c9a1934f0d98",
+        "name": "Availability",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1270,
+        "y": 1020,
+        "wires": []
+    },
+    {
+        "id": "abd3c92109a559f0",
+        "type": "http request",
+        "z": "9d40c9a1934f0d98",
+        "name": "PUT /updateCost",
+        "method": "PUT",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://semoga-lulus.vercel.app/api/updateCost",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 1050,
+        "y": 1060,
+        "wires": [
+            [
+                "60f538e791db9143"
+            ]
+        ]
+    },
+    {
+        "id": "60f538e791db9143",
+        "type": "debug",
+        "z": "9d40c9a1934f0d98",
+        "name": "Cost",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1230,
+        "y": 1060,
+        "wires": []
+    },
+    {
+        "id": "e55364fef7aafd99",
+        "type": "ui_button",
+        "z": "69466c75b8cab1be",
+        "name": "Lock",
+        "group": "f2fe64a9681638bb",
+        "order": 1,
+        "width": 6,
+        "height": 1,
+        "passthru": false,
+        "label": "{{label}}",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "{{bgcolor}}",
+        "className": "",
+        "icon": "{{icon}}",
+        "payload": "true",
+        "payloadType": "bool",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 490,
+        "y": 120,
+        "wires": [
+            [
+                "13c10f80a918d559"
+            ]
+        ]
+    },
+    {
+        "id": "0ba36f1f74ba0990",
+        "type": "inject",
+        "z": "69466c75b8cab1be",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 210,
+        "y": 120,
+        "wires": [
+            [
+                "78dac4d897f795c9"
+            ]
+        ]
+    },
+    {
+        "id": "78dac4d897f795c9",
+        "type": "function",
+        "z": "69466c75b8cab1be",
+        "name": "",
+        "func": "const locked = {\n    label: \"Locked\",\n    icon: \"fa-regular fa-lock\",\n    bgcolor: \"#e83f6f\"\n}\nconst unlocked = {\n    label: \"Unlocked\",\n    icon: \"fa-regular fa-unlock\",\n    bgcolor: \"#2274a5\"\n}\n\nif(typeof global.get(\"lock\") === \"undefined\"){\n    global.set(\"lock\", false)\n    node.status({fill:\"red\",shape:\"ring\",text:\"Locked\"});\n    return locked;\n} else {\n    const lockState = global.get(\"lock\");\n\n    if(lockState){\n        node.status({fill:\"blue\",shape:\"dot\",text:\"Unlocked\"});\n        return unlocked;\n    } else {\n        node.status({fill:\"red\",shape:\"ring\",text:\"Locked\"});\n        return locked;\n    }\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 120,
+        "wires": [
+            [
+                "e55364fef7aafd99"
+            ]
+        ]
+    },
+    {
+        "id": "13c10f80a918d559",
+        "type": "function",
+        "z": "69466c75b8cab1be",
+        "name": "flipman_function",
+        "func": "var d = new Date();\nvar _resultDate = d.toLocaleDateString('en-GB', { timeZone: 'UTC', year: 'numeric', month: '2-digit', day: '2-digit', hour: `2-digit`, minute: `2-digit`, second: `2-digit`, hour12: false, fractionalSecondDigits: 3 });\n\nif(typeof global.get(\"lock\") === \"undefined\"){\n\n} else {\n    const lockState = global.get(\"lock\");\n\n    if(lockState){\n        global.set(\"lock\", false);\n        return [\n            {\n                payload: \"false\"\n            },\n            {\n                payload: {lock:0, sent:_resultDate},\n                auth: \"Bearer \" + global.get(\"apitoken\")\n            }\n        ]\n    } else {\n        global.set(\"lock\", true);\n        return [\n            {\n                payload: \"true\"\n            },\n            {\n                payload: {lock:1, sent:_resultDate},\n                auth: \"Bearer \" + global.get(\"apitoken\")\n            }\n        ]\n    }\n}",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 640,
+        "y": 120,
+        "wires": [
+            [
+                "78dac4d897f795c9",
+                "04bb7090db099618"
+            ],
+            [
+                "a7028c9fd0f21391"
+            ]
+        ]
+    },
+    {
+        "id": "56664bceaa8466cf",
+        "type": "ui_button",
+        "z": "69466c75b8cab1be",
+        "name": "Setup",
+        "group": "f2fe64a9681638bb",
+        "order": 2,
+        "width": 6,
+        "height": 1,
+        "passthru": false,
+        "label": "{{label}}",
+        "tooltip": "",
+        "color": "",
+        "bgcolor": "{{bgcolor}}",
+        "className": "",
+        "icon": "{{icon}}",
+        "payload": "true",
+        "payloadType": "bool",
+        "topic": "topic",
+        "topicType": "msg",
+        "x": 490,
+        "y": 180,
+        "wires": [
+            [
+                "e85a1bbb17640d58"
+            ]
+        ]
+    },
+    {
+        "id": "a5a401f8591acf06",
+        "type": "inject",
+        "z": "69466c75b8cab1be",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 210,
+        "y": 180,
+        "wires": [
+            [
+                "62188710aa9dfef3"
+            ]
+        ]
+    },
+    {
+        "id": "62188710aa9dfef3",
+        "type": "function",
+        "z": "69466c75b8cab1be",
+        "name": "",
+        "func": "const setup = {\n    label: \"Setup\",\n    icon: \"fa-duotone fa-gear\",\n    bgcolor: \"#ffbf00\"\n}\nconst running = {\n    label: \"Running\",\n    icon: \"fa-duotone fa-check\",\n    bgcolor: \"#2abff8\"\n}\n\nif(typeof global.get(\"setupState\") === \"undefined\"){\n    global.set(\"setupState\", false)\n\n    if(typeof global.get(\"hist\") === \"undefined\"){\n        global.set(\"hist\", [[\"setup\",Date.now()]])\n    } else {\n        let hist = global.get(\"hist\");\n        hist.push([\"setup\",Date.now()]);\n        global.set(\"hist\",hist);\n    }\n\n    node.status({fill:\"yellow\",shape:\"ring\",text:\"Setup\"});\n    return setup;\n} else {\n    const setupStateState = global.get(\"setupState\");\n\n    if(setupStateState){\n        node.status({fill:\"blue\",shape:\"dot\",text:\"Running\"});\n        return running;\n    } else {\n        if (typeof global.get(\"hist\") === \"undefined\") {\n            global.set(\"hist\", [[\"setup\", Date.now()]])\n        } else {\n            let hist = global.get(\"hist\");\n            hist.push([\"setup\", Date.now()]);\n            global.set(\"hist\", hist);\n        }\n        node.status({fill:\"yellow\",shape:\"ring\",text:\"Setup\"});\n        return setup;\n    }\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 360,
+        "y": 180,
+        "wires": [
+            [
+                "56664bceaa8466cf"
+            ]
+        ]
+    },
+    {
+        "id": "e85a1bbb17640d58",
+        "type": "function",
+        "z": "69466c75b8cab1be",
+        "name": "flipman_function",
+        "func": "var d = new Date();\nvar _resultDate = d.toLocaleDateString('en-GB', { timeZone: 'UTC', year: 'numeric', month: '2-digit', day: '2-digit', hour: `2-digit`, minute: `2-digit`, second: `2-digit`, hour12: false, fractionalSecondDigits: 3 });\n\nif(typeof global.get(\"setupState\") === \"undefined\"){\n\n} else {\n    const setupState = global.get(\"setupState\");\n\n    if(setupState){\n        global.set(\"setupState\", false);\n        return [\n        {},{\n            payload: {setupState:0, sent: _resultDate},\n            auth: \"Bearer \" + global.get(\"apitoken\")\n        }\n    ];\n    } else {\n        global.set(\"setupState\", true);\n        return [\n        {},{\n            payload: {setupState:1, sent:_resultDate},\n            auth: \"Bearer \" + global.get(\"apitoken\")\n        }\n    ];\n    }\n}",
+        "outputs": 2,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 640,
+        "y": 180,
+        "wires": [
+            [
+                "62188710aa9dfef3"
+            ],
+            [
+                "fa2710f8706d748e"
+            ]
+        ]
+    },
+    {
+        "id": "fc94e4b2d9daa8f5",
+        "type": "function",
+        "z": "69466c75b8cab1be",
+        "name": "",
+        "func": "let press = RED.util.cloneMessage(msg).payload.pressure;\n\nmsg.payload = press.toFixed(1);\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 400,
+        "wires": [
+            [
+                "467d52ddea6dcab5"
+            ]
+        ]
+    },
+    {
+        "id": "b2fd13c9e744a624",
+        "type": "link in",
+        "z": "69466c75b8cab1be",
+        "name": "dashboard2",
+        "links": [
+            "e0105d0d26bd9f16"
+        ],
+        "x": 145,
+        "y": 400,
+        "wires": [
+            [
+                "fc94e4b2d9daa8f5",
+                "1fe99f122439b6e4"
+            ]
+        ]
+    },
+    {
+        "id": "467d52ddea6dcab5",
+        "type": "ui_gauge",
+        "z": "69466c75b8cab1be",
+        "name": "",
+        "group": "f2fe64a9681638bb",
+        "order": 3,
+        "width": 6,
+        "height": 4,
+        "gtype": "gage",
+        "title": "Pressure",
+        "label": "bar",
+        "format": "{{value}}",
+        "min": 0,
+        "max": 10,
+        "colors": [
+            "#e6e600",
+            "#00b500",
+            "#ca3838"
+        ],
+        "seg1": "5.8",
+        "seg2": "6.5",
+        "diff": false,
+        "className": "",
+        "x": 540,
+        "y": 400,
+        "wires": []
+    },
+    {
+        "id": "b7cfab7f2a1598ee",
+        "type": "ui_chart",
+        "z": "69466c75b8cab1be",
+        "name": "",
+        "group": "f2fe64a9681638bb",
+        "order": 5,
+        "width": 6,
+        "height": 4,
+        "label": "Vibration",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "1024",
+        "removeOlder": 1,
+        "removeOlderPoints": "120",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 540,
+        "y": 260,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "984be2ca7b550a28",
+        "type": "function",
+        "z": "69466c75b8cab1be",
+        "name": "",
+        "func": "let now = Date.now()\nif(typeof context.get(\"last\") === \"undefined\"){\n    msg.payload = msg.payload.vibration;\n\n    context.set(\"last\", Date.now())\n    return msg;\n} else {\n    let last = context.get(\"last\");\n\n    msg.payload = msg.payload.vibration;\n\n    if(now - last >= 500 || msg.payload >= 40){\n        context.set(\"last\", now)\n        node.status(now-last)\n        return msg;\n    }\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 260,
+        "wires": [
+            [
+                "b7cfab7f2a1598ee"
+            ]
+        ]
+    },
+    {
+        "id": "1dbb68dbf06ee4e3",
+        "type": "link in",
+        "z": "69466c75b8cab1be",
+        "name": "dashboard1",
+        "links": [
+            "742d6330fe8df62b"
+        ],
+        "x": 145,
+        "y": 260,
+        "wires": [
+            [
+                "ac80f40eb2961d78",
+                "984be2ca7b550a28",
+                "3f0978c41a842c1a"
+            ]
+        ]
+    },
+    {
+        "id": "9e1b99d69c8c986c",
+        "type": "ui_chart",
+        "z": "69466c75b8cab1be",
+        "name": "",
+        "group": "f2fe64a9681638bb",
+        "order": 6,
+        "width": 6,
+        "height": 4,
+        "label": "Strain",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "1024",
+        "removeOlder": 1,
+        "removeOlderPoints": "120",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 530,
+        "y": 300,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "ac80f40eb2961d78",
+        "type": "function",
+        "z": "69466c75b8cab1be",
+        "name": "",
+        "func": "let now = Date.now()\nif (typeof context.get(\"last\") === \"undefined\") {\n    msg.payload = msg.payload.strain;\n\n    context.set(\"last\", Date.now())\n    return msg;\n} else {\n    let last = context.get(\"last\");\n\n    msg.payload = msg.payload.strain;\n\n    if (now - last >= 500 || msg.payload >= 100) {\n        context.set(\"last\", now)\n        node.status(now - last)\n        return msg;\n    }\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 300,
+        "wires": [
+            [
+                "9e1b99d69c8c986c"
+            ]
+        ]
+    },
+    {
+        "id": "754a0e8a94b3d63c",
+        "type": "link in",
+        "z": "69466c75b8cab1be",
+        "name": "lockbutton",
+        "links": [
+            "206c3ee4d1d1c3e9"
+        ],
+        "x": 205,
+        "y": 60,
+        "wires": [
+            [
+                "78dac4d897f795c9"
+            ]
+        ]
+    },
+    {
+        "id": "04bb7090db099618",
+        "type": "http request",
+        "z": "69466c75b8cab1be",
+        "d": true,
+        "name": "scadaLock",
+        "method": "PUT",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "192.168.82.98:1880/scadaLock",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 850,
+        "y": 100,
+        "wires": [
+            [
+                "000c7c095851acb4"
+            ]
+        ]
+    },
+    {
+        "id": "000c7c095851acb4",
+        "type": "debug",
+        "z": "69466c75b8cab1be",
+        "name": "put",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1030,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "1fe99f122439b6e4",
+        "type": "function",
+        "z": "69466c75b8cab1be",
+        "name": "",
+        "func": "\nlet now = Date.now()\nif (typeof context.get(\"last\") === \"undefined\") {\n    msg.payload = msg.payload.current;\n\n    context.set(\"last\", Date.now())\n    return msg;\n} else {\n    let last = context.get(\"last\");\n\n    msg.payload = msg.payload.current;\n\n    if (now - last >= 500 || msg.payload >= 0.5) {\n        context.set(\"last\", now)\n        node.status(now - last)\n        return msg;\n    }\n}\n\n//msg.payload = msg.payload.current;\n//return msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 440,
+        "wires": [
+            [
+                "6b6891f0c10e2e9b"
+            ]
+        ]
+    },
+    {
+        "id": "6b6891f0c10e2e9b",
+        "type": "ui_chart",
+        "z": "69466c75b8cab1be",
+        "name": "",
+        "group": "f2fe64a9681638bb",
+        "order": 7,
+        "width": 6,
+        "height": 4,
+        "label": "Current",
+        "chartType": "line",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "0",
+        "ymax": "2",
+        "removeOlder": 1,
+        "removeOlderPoints": "120",
+        "removeOlderUnit": "60",
+        "cutout": 0,
+        "useOneColor": false,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "outputs": 1,
+        "useDifferentColor": false,
+        "className": "",
+        "x": 540,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "fa2710f8706d748e",
+        "type": "http request",
+        "z": "69466c75b8cab1be",
+        "name": "PUT /updateSetup",
+        "method": "PUT",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://semoga-lulus.vercel.app/api/updateSetup",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "Authorization",
+                "keyValue": "",
+                "valueType": "msg",
+                "valueValue": "auth"
+            }
+        ],
+        "x": 870,
+        "y": 180,
+        "wires": [
+            [
+                "795d6af2216a94e1"
+            ]
+        ]
+    },
+    {
+        "id": "795d6af2216a94e1",
+        "type": "debug",
+        "z": "69466c75b8cab1be",
+        "name": "/updateSetup",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1070,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "fc7dc1bc4a917680",
+        "type": "inject",
+        "z": "69466c75b8cab1be",
+        "name": "",
+        "props": [],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 710,
+        "y": 360,
+        "wires": [
+            [
+                "872f6152e02a6a23"
+            ]
+        ]
+    },
+    {
+        "id": "872f6152e02a6a23",
+        "type": "function",
+        "z": "69466c75b8cab1be",
+        "name": "function 1",
+        "func": "return {\n    payload: {\n        setupState: 0\n    },\n    auth: \"Bearer \" + global.get(\"apitoken\")\n};",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 820,
+        "y": 280,
+        "wires": [
+            [
+                "fa2710f8706d748e"
+            ]
+        ]
+    },
+    {
+        "id": "dbbebf6ac66c8aa4",
+        "type": "inject",
+        "z": "69466c75b8cab1be",
+        "name": "",
+        "props": [],
+        "repeat": "1",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "x": 190,
+        "y": 520,
+        "wires": [
+            [
+                "514c86b3857251f2"
+            ]
+        ]
+    },
+    {
+        "id": "514c86b3857251f2",
+        "type": "function",
+        "z": "69466c75b8cab1be",
+        "name": "statman_function",
+        "func": "const setup = {\n    \"status\": \"SETUP\",\n    \"icon\": \"fa fa-gear\",\n    \"bgcolor\": \"yellow\",\n    \"color\": \"black\"\n}\nconst running = {\n    \"status\": \"RUNNING\",\n    \"icon\": \"fa fa-check\",\n    \"bgcolor\": \"#2274a5\",\n    \"color\": \"white\"\n}\nconst breakdown = {\n    \"status\": \"BREAKDOWN\",\n    \"icon\": \"fa fa-exclamation-triangle\",\n    \"bgcolor\": \"red\",\n    \"color\": \"white\"\n}\n\nif (global.get(\"breakdown\")){\n    msg.payload = breakdown\n} else {\n    msg.payload = running\n}\n\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 350,
+        "y": 520,
+        "wires": [
+            [
+                "8b4c1776f2108966"
+            ]
+        ]
+    },
+    {
+        "id": "8b4c1776f2108966",
+        "type": "ui_template",
+        "z": "69466c75b8cab1be",
+        "group": "f2fe64a9681638bb",
+        "name": "",
+        "order": 8,
+        "width": 6,
+        "height": 4,
+        "format": "<style>\n    .table-scadastatus {\n    background-color: #2274a5;\n    text-align: center;\n    border: 1px solid;\n    width: 100%;\n    }\n    #table-scadastatus-title {\n    font-size: 18px;\n    font-weight: bold;\n    color: white;\n    border: 1px solid;\n    height: 42px;\n    }\n    #table-scadastatus-status {\n    font-size: 32px;\n    border: 1px solid;\n    height: 142px;\n    }\n</style>\n\n<table class=\"table-scadastatus\">\n    <tr>\n        <th id=\"table-scadastatus-title\">MACHINE STATUS</th>\n    </tr>\n    <tr>\n        <td id=\"table-scadastatus-status\" style=\"background-color:{{msg.payload.bgcolor}}; color:{{msg.payload.color}}\">\n            <i class=\"{{msg.payload.icon}}\"></i>{{msg.payload.status}}\n        </td>\n    </tr>\n</table>",
+        "storeOutMessages": true,
+        "fwdInMessages": true,
+        "resendOnRefresh": true,
+        "templateScope": "local",
+        "className": "",
+        "x": 540,
+        "y": 520,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a7028c9fd0f21391",
+        "type": "http request",
+        "z": "69466c75b8cab1be",
+        "name": "PUT /updateLock",
+        "method": "PUT",
+        "ret": "txt",
+        "paytoqs": "ignore",
+        "url": "https://semoga-lulus.vercel.app/api/updateLock",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [
+            {
+                "keyType": "Authorization",
+                "keyValue": "",
+                "valueType": "msg",
+                "valueValue": "auth"
+            }
+        ],
+        "x": 870,
+        "y": 140,
+        "wires": [
+            [
+                "460423071889e3c5"
+            ]
+        ]
+    },
+    {
+        "id": "460423071889e3c5",
+        "type": "debug",
+        "z": "69466c75b8cab1be",
+        "name": "/updateLock",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 1070,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "3f0978c41a842c1a",
+        "type": "function",
+        "z": "69466c75b8cab1be",
+        "name": "",
+        "func": "let now = Date.now()\nif (typeof context.get(\"last\") === \"undefined\") {\n    msg.payload = msg.payload.temperature;\n\n    context.set(\"last\", Date.now())\n    return msg;\n} else {\n    let last = context.get(\"last\");\n\n    msg.payload = msg.payload.temperature;\n\n    if (now - last >= 500) {\n        context.set(\"last\", now)\n        node.status(now - last)\n        return msg;\n    }\n}",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 320,
+        "y": 340,
+        "wires": [
+            [
+                "5d951ca1860cdd43"
+            ]
+        ]
+    },
+    {
+        "id": "5d951ca1860cdd43",
+        "type": "ui_gauge",
+        "z": "69466c75b8cab1be",
+        "name": "",
+        "group": "f2fe64a9681638bb",
+        "order": 4,
+        "width": 6,
+        "height": 4,
+        "gtype": "gage",
+        "title": "Temperature",
+        "label": "bar",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "200",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "80",
+        "seg2": "120",
+        "diff": false,
+        "className": "",
+        "x": 550,
+        "y": 340,
+        "wires": []
+    }
+]
